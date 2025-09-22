@@ -1,32 +1,69 @@
-# Live AI-Powered Client Registration in Google Colab
+# Voice Registration System (Gradio)
 
-An innovative and simple proof-of-concept for non-profits to streamline client registration. This tool uses a live microphone to capture client information and leverages the power of OpenAI's models to intelligently extract and format the data before saving it to a Google Sheet. It is built entirely within a single Google Colab notebook, making it accessible and easy to deploy for organizations with limited technical resources.
+A proof-of-concept app for capturing client registration info via **voice input**. Uses **Gradio** for recording, **Whisper API** for transcription, and **GPT-4o-mini** for structured data extraction.
 
 ## ✨ Features
 
-- **Live Voice Input:** A JavaScript-to-Python bridge enables live audio recording directly from the user's microphone within the notebook.
-- **Real-Time Transcription:** Utilizes the highly accurate **OpenAI Whisper API** to transcribe spoken information in real-time, providing immediate visual feedback.
-- **AI-Powered Data Extraction:** The **GPT-4o model** is instructed to act as an intelligent form, guiding the conversation and extracting structured data (Name, Household Members, Address, Phone) into a clean JSON format.
-- **Interactive & Conversational:** The system asks clarifying questions if information is missing or unclear, creating a natural dialogue flow.
-- **Review & Save:** The final, extracted data is displayed for review, and the user has the explicit option to save it to a designated Google Sheet.
-- **Zero Backend Setup:** The entire solution runs within a Google Colab notebook, eliminating the need for a dedicated web server or complex deployment.
+* Voice recording via Gradio
+* Accurate speech-to-text (Whisper)
+* AI data extraction (Name, Household, Address, Phone)
+* Conversational follow-ups for missing info
+* Real-time conversation + data table display
+* Session persistence across inputs
 
-## 🚀 How to Use
+## 🚀 Setup & Usage
 
-### Prerequisites
+1. **Requirements**: Python, `gradio`, `openai`, and OpenAI API key (with Whisper + GPT-4o-mini access).
+2. **Configure API Key** in `app.py`:
 
-1.  A Google account.
-2.  An OpenAI API key.
-3.  A Google Sheet to store the data, with the following column headers: `Name`, `Household Members`, `Address`, `Phone`.
+   ```python
+   client = OpenAI(api_key="your-api-key")
+   ```
+3. **Install deps**:
 
-### Instructions
+   ```bash
+   pip install gradio openai
+   ```
+4. **Run app**:
 
-1.  Open the `registration-notebook.ipynb` file in Google Colab.
-2.  Follow the step-by-step instructions within the notebook cells. You will be prompted to:
-    * Authenticate with your Google account (for Sheets access).
-    * Enter your OpenAI API key.
-    * Interact with the live microphone to register a client.
-3.  Review the extracted data.
-4.  Click the final "Save" button to append the new client's information to your Google Sheet.
+   ```bash
+   python app.py
+   ```
+5. **Use**: Record voice → system transcribes, extracts data, asks clarifications → final table output.
 
-## 📁 Repository Structure
+## 🏗 How It Works
+
+1. Record voice → Gradio
+2. Transcribe → Whisper
+3. Extract fields → GPT-4o-mini
+4. Manage conversation for missing info
+5. Display results in a timestamped table
+
+## 📁 Files
+
+```
+app.py      # Main app
+README.md   # Docs
+```
+
+## 🔧 Tech
+
+* Gradio (web UI)
+* Whisper API (speech-to-text)
+* GPT-4o-mini (NLP)
+* JSON + timestamp output
+
+## 💡 Benefits
+
+* Minimal setup (single file)
+* Natural, conversational input
+* Structured data instantly
+* Real-time feedback + session persistence
+
+## 🔒 Security
+
+Keep your API key private (use env vars in production).
+
+---
+
+Do you want me to make this **even shorter (like a quick-start guide)** or keep this balance of brevity + clarity?
