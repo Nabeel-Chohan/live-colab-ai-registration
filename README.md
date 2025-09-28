@@ -65,6 +65,17 @@ README.md   # Docs
 
 Keep your API key private (use env vars in production).
 
+✅ Final extracted data:
++-------------------+----------------------------------------------+
+| Field             | Value                                        |
++-------------------+----------------------------------------------+
+| Name              | Nabeel                                       |
+| Household Members | 5                                            |
+| Address           | 293 Palisade Avenue, Jersey City, New Jersey |
+| Phone             | 2019791111                                   |
+| Timestamp         | 2025-09-28 11:09:35                          |
++-------------------+----------------------------------------------+
+
 ---
 
 Do you want me to make this **even shorter (like a quick-start guide)** or keep this balance of brevity + clarity?
