@@ -1,12 +1,12 @@
 # Food Bank Voice Registration System
 
 A proof-of-concept app for Food Banks capturing client registration info via **voice input**. Uses **Gradio** for recording, **Whisper API** for transcription, and **GPT-4o-mini** for structured data extraction. The Problem It Solves:
-Client registration at food banks often involves manual form-filling, which can be time-consuming and challenging, especially when language barriers exist. This procedural focus can detract from the human connection, creating a stressful experience for both the client and the volunteer.
+Client registration at food banks often involves manual form-filling, which can be time-consuming and challenging, especially when language barriers exist. 
 
 ## ✨ Features
 
 * Voice recording via Gradio
-* Accurate speech-to-text (Whisper)
+* Accurate translation to english speech-to-text (Whisper)
 * AI data extraction (Name, Household, Address, Phone)
 * Conversational follow-ups for missing info
 * Real-time conversation + data table display
