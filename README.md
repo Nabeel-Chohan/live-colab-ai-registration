@@ -76,6 +76,3 @@ Keep your API key private (use env vars in production).
 | Timestamp         | 2025-09-28 11:09:35                          |
 +-------------------+----------------------------------------------+
 
----
-
-Do you want me to make this **even shorter (like a quick-start guide)** or keep this balance of brevity + clarity?
